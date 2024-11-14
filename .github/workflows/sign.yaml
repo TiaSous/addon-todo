@@ -13,10 +13,17 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dep
         run: npm i
+      - name: Install lftp
+        run: sudo apt-get install lftp -y
       - name: Run pack:ff
         env: 
           AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
           AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
         run: npm run pack:ff
-
+      - name: Deploy via lftp
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+        run: lftp -e "set ftp:ssl-allow no; mirror -R -I *.xpi web-ext-artifacts /site/wwwroot/addon_todo/trs; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_PASS
 
