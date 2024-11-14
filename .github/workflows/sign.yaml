@@ -1,0 +1,22 @@
+name: sign
+
+on:
+  push:
+    tags:        
+      - '*' 
+jobs:
+  sign:
+    name: npm audit - Front-end
+    runs-on: ubuntu-latest
+    steps:
+      - name: install repos
+        uses: actions/checkout@v3
+      - name: Install dep
+        run: npm i
+      - name: Run pack:ff
+        env: 
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER}}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET}}
+        run: npm run pack:ff
+
+
