@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "To-do App",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "description": "To-do app",
     "permissions": ["identity"],
     "host_permissions": [],
@@ -21,7 +21,8 @@
     "browser_specific_settings": {
         "gecko": {
             "id": "{fee20083-2e58-4465-88d3-84f840e626b2}",
-            "strict_min_version": "109.0"
+            "strict_min_version": "109.0",
+			"update_url": "https://addonrepositories.azurewebsites.net/addon_todo/trs/update_file.json"
         }
     },
     "author": "Tiago Rodrigues Sousa"

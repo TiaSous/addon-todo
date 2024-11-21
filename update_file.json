@@ -1,0 +1,16 @@
+{
+  "addons": {
+    "{fee20083-2e58-4465-88d3-84f840e626b2}": {
+      "updates": [
+        {
+          "version": "0.8.0",
+          "update_link": "https://addonrepositories.azurewebsites.net/addon_todo/trs/todoapp-0.8.0.xpi"
+        },
+		{
+          "version": "0.9.0",
+          "update_link": "https://addonrepositories.azurewebsites.net/addon_todo/trs/todoapp-0.9.0.xpi"
+        }
+      ]
+    }
+  }
+}

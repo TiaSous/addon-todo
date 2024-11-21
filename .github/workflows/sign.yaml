@@ -20,7 +20,12 @@ jobs:
           AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
           AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
         run: npm run pack:ff
-      - name: Deploy via lftp
+      - name: Deploy via lftp JSON
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: lftp -e "set ftp:ssl-allow no; mirror -R -I update_file.json web-ext-artifacts /site/wwwroot/addon_todo/trs; quit" -u $FTP_USERNAME,$FTP_PASSWORD ftps://waws-prod-zrh-007.ftp.azurewebsites.windows.net/site/wwwroot
+      - name: Deploy via lftp XPI
         env:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
