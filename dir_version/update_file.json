@@ -9,6 +9,10 @@
 		{
           "version": "0.9.0",
           "update_link": "https://addonrepositories.azurewebsites.net/addon_todo/trs/todoapp-0.9.0.xpi"
+        },
+		{
+          "version": "0.9.1",
+          "update_link": "https://addonrepositories.azurewebsites.net/addon_todo/trs/todoapp-0.9.1.xpi"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "To-do App",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "description": "To-do app",
     "permissions": ["identity"],
     "host_permissions": [],
